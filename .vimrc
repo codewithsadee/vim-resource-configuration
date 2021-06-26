@@ -25,8 +25,8 @@ filetype plugin indent on    " required
         let iCanHazVundle=0
     endif
 
-    set nocompatible              " be iMproved, required
-    filetype off                  " required
+    "set nocompatible              " be iMproved, required
+    "filetype off                  " required
     set rtp+=~/.vim/bundle/vundle/
 
     call vundle#begin()
@@ -54,9 +54,10 @@ call vundle#begin()
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'ap/vim-css-color'
 	Plugin 'voldikss/vim-floaterm'
-	Plugin 'frazrepo/vim-rainbow'
+	"Plugin 'frazrepo/vim-rainbow'
 	Plugin 'ryanoasis/vim-devicons'
 	Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+	Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 
@@ -83,9 +84,17 @@ let g:airline_powerline_fonts = 1
 
 "FloatermToggle settings
 let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_keymap_new    = '<F7>'
+let g:floaterm_keymap_prev   = '<F8>'
+let g:floaterm_keymap_next   = '<F9>'
+let g:floaterm_keymap_kill = '<F11>'
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 let g:floaterm_title = 'codewithsadee@term $1/$2'
+" Set floating window border line color to cyan, and background to orange
+"hi FloatermBorder guibg=orange guifg=cyan
+	hi Floaterm guibg=black
+
 
 
 "Vim colorscheme set
@@ -105,3 +114,9 @@ set autoindent
 set shiftwidth=4
 set tabstop=4
 set encoding=UTF-8
+
+
+"javascript syntax highlight
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
